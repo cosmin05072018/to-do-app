@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\toDoApp;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +13,6 @@ use App\Http\Controllers\toDoApp;
 |
 */
 
-Route::get('/', [toDoApp::class, 'toDoApp']);
+Route::get('/', function () {
+    return view('welcome');
+});
