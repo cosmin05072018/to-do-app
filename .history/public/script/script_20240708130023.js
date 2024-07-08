@@ -22,33 +22,11 @@ setThemeSection.addEventListener("click", () => {
 });
 
 $(document).ready(function () {
-    $.ajax({
-        url: "/getTasks",
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            let taskList = $("#taskList");
-            taskList.empty();
-
-            $.each(data, function (index, task) {
-                let li = $("<li>").text(task.task_name);
-                let circleDiv = $("<div>").addClass("circle-task");
-
-                li.prepend(circleDiv);
-                taskList.append(li);
-            });
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-        },
-    });
-
     $("#addTaskForm").submit(function (event) {
-        location.reload();
         event.preventDefault();
 
-        let url = $(this).attr("action");
-        let formData = {
+        var url = $(this).attr("action");
+        var formData = {
             task: $("#task").val(),
             _token: $("input[name=_token]").val(),
         };
@@ -65,5 +43,23 @@ $(document).ready(function () {
                 console.error(xhr.responseText);
             },
         });
+    });
+    $.ajax({
+        url: "/getTasks",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            let taskList = $("#taskList");
+            taskList.empty(); // Golește lista curentă de task-uri
+
+            // Adaugă task-urile din răspunsul AJAX în lista de task-uri
+            $.each(data, function (index, task) {
+                var li = $("<li>").text(task.task_name);
+                taskList.append(li);
+            });
+        },
+        error: function (xhr, status, error) {
+            console.log(error);
+        },
     });
 });

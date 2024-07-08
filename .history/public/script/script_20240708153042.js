@@ -32,9 +32,6 @@ $(document).ready(function () {
 
             $.each(data, function (index, task) {
                 let li = $("<li>").text(task.task_name);
-                let circleDiv = $("<div>").addClass("circle-task");
-
-                li.prepend(circleDiv);
                 taskList.append(li);
             });
         },

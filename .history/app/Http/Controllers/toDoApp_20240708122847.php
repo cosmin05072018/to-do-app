@@ -11,13 +11,11 @@ class toDoApp extends Controller
 {
     public function toDoApp()
     {
-        return view('to-do-app');
-    }
-
-    public function getTasks(){
+        // Obține toate task-urile din baza de date
         $tasks = Task::all();
 
-        return response()->json($tasks);
+        // Returnează view-ul și datele sub formă de JSON
+        return view('to-do-app', compact('tasks'));
     }
 
     public function addTask(Request $request)

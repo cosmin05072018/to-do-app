@@ -14,7 +14,6 @@ use App\Http\Controllers\toDoApp;
 |
 */
 
-Route::get('/', [toDoApp::class, 'toDoApp'])->name('toDoApp');
-Route::get('/getTasks', [toDoApp::class, 'getTasks'])->name('getTasks');
+Route::get('/', [ToDoAppController::class, 'toDoApp'])->name('toDoApp');
 
 Route::post('addTask', [toDoApp::class, 'addTask'])->name('addTask');

@@ -17,17 +17,14 @@
                 <img class="icon" src="{{ asset('storage/icon-sun.svg') }}" alt="icon">
             </div>
         </div>
-        <form action="{{ route('addTask') }}" method="POST" class="add-to-do" id="addTaskForm">
+        <form action="{{ route('addTask') }}" method="POST" class="add-to-do">
             @csrf
             <div class="circle"></div>
-            <input type="text" placeholder="Create a new todo..." name="task" id="task">
+            <input type="text" placeholder="Create a new todo..." name="task">
             <button class="add-task" type="submit">add</button>
         </form>
-        <ul class="list" id="taskList">
-        </ul>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('script/script.js') }}"></script>
 
 </body>

@@ -14,12 +14,6 @@ class toDoApp extends Controller
         return view('to-do-app');
     }
 
-    public function getTasks(){
-        $tasks = Task::all();
-
-        return response()->json($tasks);
-    }
-
     public function addTask(Request $request)
     {
         $validatedData = $request->validate([

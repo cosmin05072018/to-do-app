@@ -11,7 +11,8 @@
     /* Primary */
 
     --bright-blue: hsl(220, 98%, 61%);
-    --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --check-background: linear-gradient hsl(192, 100%, 67%) to
+        hsl(280, 87%, 65%);
 
     /* Light Theme */
 
@@ -47,6 +48,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 45px;
+    max-width: 480px;
+    width: 100%;
     position: absolute;
 }
 
@@ -71,20 +74,14 @@ body {
     padding: 16px 20px;
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
-.container .add-to-do .circle,
-.circle-task {
+.container .add-to-do .circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid var(--very-dark-grayish-blue);
-    margin-right: 15px;
-}
-
-.circle-task:hover {
-    cursor: pointer;
-    border: 1px solid var(--light-grayish-blue-hover);
 }
 
 .container .add-to-do input {
@@ -92,6 +89,7 @@ body {
     background: transparent;
     border: none;
     color: var(--light-graiysh-blue);
+    width: 80%;
 }
 
 .container .add-to-do input::placeholder {
@@ -113,18 +111,11 @@ body {
 .list {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
         rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 3px;
 }
 
 .list li {
-    display: flex;
-    align-items: center;
     list-style: none;
-    padding: 12px 16px;
-    color: var(--light-grayish-blue);
-    background-color: var(--very-dark-desaturated-blue);
-    border-bottom: 0.1px solid var(--very-dark-grayish-blue);
-}
-
-.list li:first-child {
-    border-radius: 5px 5px 0 0;
+    padding: 8px 14px;
+    color: var(--very-light-grayish-blue);
 }

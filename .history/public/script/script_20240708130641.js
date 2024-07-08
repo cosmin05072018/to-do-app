@@ -31,10 +31,7 @@ $(document).ready(function () {
             taskList.empty();
 
             $.each(data, function (index, task) {
-                let li = $("<li>").text(task.task_name);
-                let circleDiv = $("<div>").addClass("circle-task");
-
-                li.prepend(circleDiv);
+                var li = $("<li>").text(task.task_name);
                 taskList.append(li);
             });
         },
@@ -47,8 +44,8 @@ $(document).ready(function () {
         location.reload();
         event.preventDefault();
 
-        let url = $(this).attr("action");
-        let formData = {
+        var url = $(this).attr("action");
+        var formData = {
             task: $("#task").val(),
             _token: $("input[name=_token]").val(),
         };

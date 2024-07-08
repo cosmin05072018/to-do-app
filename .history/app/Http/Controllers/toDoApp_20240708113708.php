@@ -14,22 +14,19 @@ class toDoApp extends Controller
         return view('to-do-app');
     }
 
-    public function getTasks(){
-        $tasks = Task::all();
-
-        return response()->json($tasks);
-    }
-
     public function addTask(Request $request)
     {
+        // Validează și salvează datele din cererea AJAX
         $validatedData = $request->validate([
             'task' => 'required|string|max:255',
         ]);
 
+        // Creează o nouă instanță a modelului Task
         $newTask = new Task();
         $newTask->task_name = $validatedData['task'];
         $newTask->save();
 
+        // Returnează un răspuns JSON pentru cererea AJAX
         return response()->json(['success' => true, 'message' => 'Task added successfully']);
     }
 }

@@ -11,8 +11,7 @@
     /* Primary */
 
     --bright-blue: hsl(220, 98%, 61%);
-    --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
+    --check-background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     /* Light Theme */
 
     --very-light-gray: hsl(0, 0%, 98%);
@@ -78,13 +77,14 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    background-color:  var(--check-background);
     border: 1px solid var(--very-dark-grayish-blue);
     margin-right: 15px;
 }
 
 .circle-task:hover {
     cursor: pointer;
-    border: 1px solid var(--light-grayish-blue-hover);
+    background-color:  var(--check-background);
 }
 
 .container .add-to-do input {

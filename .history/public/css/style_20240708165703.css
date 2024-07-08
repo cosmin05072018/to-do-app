@@ -84,7 +84,6 @@ body {
 
 .circle-task:hover {
     cursor: pointer;
-    border: 1px solid var(--light-grayish-blue-hover);
 }
 
 .container .add-to-do input {

@@ -28,13 +28,15 @@ $(document).ready(function () {
         dataType: "json",
         success: function (data) {
             let taskList = $("#taskList");
+
+            if (!data) {
+                taskList.html(1);
+            }
+
             taskList.empty();
 
             $.each(data, function (index, task) {
                 let li = $("<li>").text(task.task_name);
-                let circleDiv = $("<div>").addClass("circle-task");
-
-                li.prepend(circleDiv);
                 taskList.append(li);
             });
         },

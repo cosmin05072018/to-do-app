@@ -22,33 +22,11 @@ setThemeSection.addEventListener("click", () => {
 });
 
 $(document).ready(function () {
-    $.ajax({
-        url: "/getTasks",
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            let taskList = $("#taskList");
-            taskList.empty();
-
-            $.each(data, function (index, task) {
-                let li = $("<li>").text(task.task_name);
-                let circleDiv = $("<div>").addClass("circle-task");
-
-                li.prepend(circleDiv);
-                taskList.append(li);
-            });
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-        },
-    });
-
     $("#addTaskForm").submit(function (event) {
-        location.reload();
         event.preventDefault();
+        var url = $(this).attr("action");
 
-        let url = $(this).attr("action");
-        let formData = {
+        var formData = {
             task: $("#task").val(),
             _token: $("input[name=_token]").val(),
         };
@@ -58,8 +36,8 @@ $(document).ready(function () {
             url: url,
             data: formData,
             dataType: "json",
-            success: function (response) {
-                console.log(response);
+            success: function (data) {
+                console.log(data);
             },
             error: function (xhr, status, error) {
                 console.error(xhr.responseText);

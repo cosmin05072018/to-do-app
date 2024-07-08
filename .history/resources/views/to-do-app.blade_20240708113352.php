@@ -23,8 +23,6 @@
             <input type="text" placeholder="Create a new todo..." name="task" id="task">
             <button class="add-task" type="submit">add</button>
         </form>
-        <ul class="list" id="taskList">
-        </ul>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

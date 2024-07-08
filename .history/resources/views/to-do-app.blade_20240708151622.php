@@ -23,7 +23,7 @@
             <input type="text" placeholder="Create a new todo..." name="task" id="task">
             <button class="add-task" type="submit">add</button>
         </form>
-        <ul class="list" id="taskList">
+        <ul id="taskList">
         </ul>
     </div>
 
