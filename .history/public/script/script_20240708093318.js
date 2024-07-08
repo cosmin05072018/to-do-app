@@ -9,9 +9,10 @@ setThemeSection.addEventListener("click", () => {
     const isLightTheme =
         body.style.backgroundImage === 'url("/storage/bg-desktop-light.jpg")';
 
-    setTimeout(() => {
-        icon.src = isLightTheme ? lightIconUrl : darkIconUrl;
-    }, 1000);
+        setTimeout(() => {
+            icon.src = isLightTheme ? darkIconUrl : lightIconUrl;
+            icon.classList.remove('fade-out'); // Îndepărtează clasa fade-out după schimbare
+        }, 500);
 
     body.style.backgroundImage = isLightTheme
         ? 'url("/storage/bg-desktop-dark.jpg")'

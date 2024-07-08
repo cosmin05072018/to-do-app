@@ -9,9 +9,11 @@ setThemeSection.addEventListener("click", () => {
     const isLightTheme =
         body.style.backgroundImage === 'url("/storage/bg-desktop-light.jpg")';
 
+
+
     setTimeout(() => {
         icon.src = isLightTheme ? lightIconUrl : darkIconUrl;
-    }, 1000);
+    }, 500);
 
     body.style.backgroundImage = isLightTheme
         ? 'url("/storage/bg-desktop-dark.jpg")'

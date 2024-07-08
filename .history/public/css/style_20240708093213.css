@@ -40,6 +40,11 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
+    /* transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out; */
+    transition: 1s ease-in;
+}
+
+.icon {
     transition: 1s ease-in;
 }
 
@@ -51,6 +56,7 @@ body {
 }
 
 .container .section-top {
+    width: 440px;
     display: flex;
     justify-content: space-between;
 }

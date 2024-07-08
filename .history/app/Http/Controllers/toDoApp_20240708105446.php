@@ -12,6 +12,6 @@ class toDoApp extends Controller
     }
 
     public function addTask(Request $request){
-
+        dd($request->task);
     }
 }

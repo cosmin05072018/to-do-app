@@ -40,7 +40,17 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
+    /* transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out; */
     transition: 1s ease-in;
+}
+
+.icon {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.icon.fade-out {
+    opacity: 0;
 }
 
 .container {
@@ -51,6 +61,7 @@ body {
 }
 
 .container .section-top {
+    width: 440px;
     display: flex;
     justify-content: space-between;
 }

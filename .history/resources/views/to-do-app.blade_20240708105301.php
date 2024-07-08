@@ -17,10 +17,9 @@
                 <img class="icon" src="{{ asset('storage/icon-sun.svg') }}" alt="icon">
             </div>
         </div>
-        <form action="{{ route('addTask') }}" method="POST" class="add-to-do">
-            @csrf
+        <form action="{{ route('/addTask') }}" method="POST" class="add-to-do">
             <div class="circle"></div>
-            <input type="text" placeholder="Create a new todo..." name="task">
+            <input type="text" placeholder="Create a new todo..." name="todo">
             <button type="submit">a</button>
         </form>
     </div>
